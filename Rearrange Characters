@@ -1,0 +1,26 @@
+Problem Statement:
+Given a string S with repeated characters. The task is to rearrange characters in a string such that no two adjacent characters are same.Check if it's possible or not.
+Solution in C++ : 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int nCases; 
+    cin >> nCases;
+    while (nCases--)
+    {
+        vector<int> counts(26);
+        string s; 
+        cin >> s;
+        int maxCount = 0;
+        for (char c : s)
+            maxCount = max(maxCount, ++counts[c - 'a']);
+        if (maxCount > (s.size()+1)/2)
+            cout << 0 << endl;
+        else
+            cout << 1 << endl;
+    }
+	return 0;
+}
