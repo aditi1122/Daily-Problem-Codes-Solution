@@ -7,17 +7,17 @@ using namespace std;
 
 int main() 
 {
-    int nCases; 
-    cin >> nCases;
-    while (nCases--)
+    int n; 
+    cin >> n;
+    while (n--)
     {
-        vector<int> counts(26);
+        vector<int>count(26);
         string s; 
         cin >> s;
-        int maxCount = 0;
+        int maxi = 0;
         for (char c : s)
-            maxCount = max(maxCount, ++counts[c - 'a']);
-        if (maxCount > (s.size()+1)/2)
+            maxi = max(maxi, ++counts[c - 'a']);
+        if (maxi > (s.size()+1)/2)
             cout << 0 << endl;
         else
             cout << 1 << endl;
