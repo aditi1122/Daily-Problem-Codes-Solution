@@ -1,0 +1,23 @@
+int ans = 0;
+void getAns(vector<int> &A,int B, int size, int sum, int index)
+{
+    if(sum > 1000)
+        return;
+    if(size == B)
+    {
+        ans++;
+        return;
+    }
+    if(index == A.size())
+        return;
+    for(int i = index; i < A.size(); i++)
+    {
+        getAns(A,B,size+1,sum+A[i],i+1);
+    }
+}
+int Solution::solve(vector<int> &A, int B) {
+  int n = A.size();
+  ans = 0;
+  getAns(A,B,0,0,0);
+  return ans;
+}
